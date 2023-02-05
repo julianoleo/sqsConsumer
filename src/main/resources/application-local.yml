@@ -1,0 +1,41 @@
+ambiente: local
+
+server:
+  port: 8081
+  servlet:
+    context-path: /consumer/v1
+
+cloud:
+  aws:
+    endpoint:
+      uri: http://localhost:4566
+    stack:
+      auto: false
+    region:
+      static: sa-east-1
+    sqs:
+      queues:
+        receive:
+          fila-sqs: my-queue
+
+threads:
+  active: 1000
+  max: 1000
+  queue: 1000
+
+sqs:
+  fila: my-queue
+
+config:
+  postgres:
+    url: jdbc:postgresql://localhost:5432/postgres
+    userName: postgres
+    passord: postgrespw
+    dbName: postgres
+    dbPort: 5432
+    maximumPoolSize: 5
+    maxLifeTime: 45000
+    connectionTimeOut: 15000
+    driverClassName: org.postgresql.Driver
+    execucaoDll: none
+    dialect: org.hibernate.dialect.PostgresSQLDialect

@@ -1,0 +1,5 @@
+aws:
+  param-store:
+    enabled: false
+  secrets-manager:
+    enabled: false
